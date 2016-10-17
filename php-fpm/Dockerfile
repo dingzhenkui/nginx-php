@@ -4,7 +4,7 @@
 #
 # Dockerizing php-fpm: Dockerfile for building php-fpm images
 #
-FROM       docker.io/centos:latest
+FROM       192.168.6.224/docker.io/centos:latest
 MAINTAINER Carson,C.J.Zeong <zcy@nicescale.com>
 
 # Set environment variable
