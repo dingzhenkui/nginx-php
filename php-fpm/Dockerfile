@@ -21,7 +21,7 @@ RUN	sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/' /etc/php.ini
 
 RUN	mkdir -p /app && echo "<?php phpinfo(); ?>" > ${APP_DIR}/info.php
 
-EXPOSE	80 443
+EXPOSE	80 5000
 
 ADD	supervisor_nginx.conf /etc/supervisor.conf.d/nginx.conf
 ADD	supervisor_php-fpm.conf /etc/supervisor.conf.d/php-fpm.conf
