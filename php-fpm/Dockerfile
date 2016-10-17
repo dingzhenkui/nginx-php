@@ -4,7 +4,7 @@
 #
 # Dockerizing php-fpm: Dockerfile for building php-fpm images
 #
-FROM       192.168.6.224/docker.io/centos:latest
+FROM       192.168.6.224:5000/docker.io/centos:latest
 MAINTAINER Carson,C.J.Zeong <zcy@nicescale.com>
 
 # Set environment variable
@@ -21,7 +21,7 @@ RUN	sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/' /etc/php.ini
 
 RUN	mkdir -p /app && echo "<?php phpinfo(); ?>" > ${APP_DIR}/info.php
 
-EXPOSE	80 5000
+EXPOSE	80 443
 
 ADD	supervisor_nginx.conf /etc/supervisor.conf.d/nginx.conf
 ADD	supervisor_php-fpm.conf /etc/supervisor.conf.d/php-fpm.conf
